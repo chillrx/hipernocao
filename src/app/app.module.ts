@@ -6,7 +6,6 @@ import { NgModule } from '@angular/core';
  * Components
  */
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
 
 /**
  * Modules
@@ -20,8 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent
+    AppComponent
   ],
   imports: [
     AppRoutingModule,
