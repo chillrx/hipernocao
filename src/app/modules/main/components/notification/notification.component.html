@@ -1,0 +1,54 @@
+<form [formGroup]="prescriptionForm">
+  <mat-card class="container">
+    <mat-card-title>Agenda</mat-card-title>
+    <mat-form-field appearance="outline">
+      <mat-label>Nome do medicamento</mat-label>
+      <mat-icon matPrefix>border_color</mat-icon>
+      <input matInput formControlName="medicine" placeholder="Digite o nome do medicamento" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Dosagem</mat-label>
+      <mat-icon matPrefix>poll</mat-icon>
+      <input matInput formControlName="quantity" placeholder="Digite a quantidade">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Orientações</mat-label>
+      <mat-icon matPrefix>sms_failed</mat-icon>
+      <input matInput formControlName="description" placeholder="Digite orientações de como deve ser administrado">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Data</mat-label>
+      <mat-icon matPrefix>date_range</mat-icon>
+      <input matInput formControlName="date" [textMask]="{mask: mask.date}" minlength="10" placeholder="Digite a data de uso" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Hora</mat-label>
+      <mat-icon matPrefix>av_timer</mat-icon>
+      <input matInput formControlName="hour" [textMask]="{mask: mask.hour}" placeholder="Digite a hora de uso do medicamento" required>
+    </mat-form-field>
+
+    <button mat-raised-button (click)="addPrescription()" [disabled]="prescriptionForm.invalid">Cadastrar</button>
+  </mat-card>
+  <mat-card class="container" id="list" *ngIf="list.length > 0">
+    <mat-card *ngFor="let item of list; let i = index" role="listitem" class="content-card">
+      <div id="close-button">
+        <mat-icon (click)="removePrescription(i)">close</mat-icon>
+      </div>
+      <p>
+        Nome: {{item.medicine}}
+        <br>
+        Quantidade: {{item.quantity}}
+        <br>
+        Orientações: {{item.description}}
+        <br>
+        Data: {{item.date}}
+        <br>
+        Hora: {{item.hour}}
+      </p>
+    </mat-card>
+  </mat-card>
+</form>

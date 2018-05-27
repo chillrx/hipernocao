@@ -1,0 +1,16 @@
+#close-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+p {
+    word-wrap: break-word;
+}
+
+#list p {
+    line-height: 20px;
+}
+
+.content-card {
+    margin-bottom: 5px;
+}

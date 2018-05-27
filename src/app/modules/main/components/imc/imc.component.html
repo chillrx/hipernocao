@@ -1,0 +1,21 @@
+<form [formGroup]="imcForm" (ngSubmit)="onImcFormSubmit()">
+  <mat-card class="container">
+    <mat-card-title>Calculadora de IMC</mat-card-title>
+    <mat-form-field appearance="outline">
+      <mat-label>Peso (KG)</mat-label>
+      <mat-icon matPrefix>person</mat-icon>
+      <input matInput placeholder="Digite seu peso" type="number" formControlName="weight">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Altura (M)</mat-label>
+      <mat-icon matPrefix>accessibility</mat-icon>
+      <input matInput placeholder="Digite sua altura" type="number" formControlName="height">
+    </mat-form-field>
+    <button mat-raised-button>Calcular</button>
+  </mat-card>
+  <mat-card *ngIf="resultIMC.view" class="container">
+    <p> IMC: {{ (resultIMC.value != 'Infinity') ? resultIMC.value : ''}}</p>
+    <p>Classificação: {{resultIMC.message}}</p>
+  </mat-card>
+
+</form>

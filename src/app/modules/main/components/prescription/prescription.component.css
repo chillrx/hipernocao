@@ -1,0 +1,12 @@
+#date {
+    width: 50%;
+    margin-inline-start: 2%;
+}
+
+p {
+    text-align: justify;
+}
+
+#list p {
+    line-height: 20px;
+}
