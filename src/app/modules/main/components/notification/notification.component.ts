@@ -20,7 +20,7 @@ export class NotificationComponent implements OnInit {
     cnpj: [/\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/]
   };
 
-  constructor(snackbar: MatSnackBar) {
+  constructor(private snackbar: MatSnackBar) {
     this.prescriptionForm = new FormGroup({
       medicine: new FormControl(null),
       quantity: new FormControl(null),
@@ -45,7 +45,7 @@ export class NotificationComponent implements OnInit {
     });
     localStorage.setItem('list', JSON.stringify(this.list));
     this.prescriptionForm.reset();
-    let snackBarRef = snackbar.open('Cadastrado com sucesso!', '', {
+    this.snackbar.open('Cadastrado com sucesso!', '', {
       duration: 1000,
     });
   }
