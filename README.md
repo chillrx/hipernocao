@@ -4,6 +4,6 @@ This project is a mobile app created with the purpose of informing people about 
 
 ## Usage
 
-Npm install
+npm install
 
 ng serve
